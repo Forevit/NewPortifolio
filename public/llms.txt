@@ -1,0 +1,17 @@
+# Eduardo Ferreira
+
+> Técnico de TI em Fortaleza, Ceará, com atuação em suporte, infraestrutura, redes, virtualização e automação.
+
+## Páginas
+
+- [Início](https://eduardoferreira.space/): apresentação e trabalhos selecionados.
+- [Sobre](https://eduardoferreira.space/sobre): trajetória, formação e tecnologias.
+- [Experiência](https://eduardoferreira.space/experiencia): histórico profissional.
+- [Projetos](https://eduardoferreira.space/projetos): projetos técnicos e repositórios públicos.
+- [Cursos e certificações](https://eduardoferreira.space/cursos): formação complementar.
+- [Contato](https://eduardoferreira.space/contato): canais de contato.
+
+## Perfis
+
+- GitHub: https://github.com/Forevit
+- LinkedIn: https://www.linkedin.com/in/carloseduardorodriguesferreira/

@@ -1,0 +1,5 @@
+import type { Metadata } from "next";
+import { SectionHeading } from "@/components/section-heading";
+import { experience } from "@/lib/content";
+export const metadata: Metadata = { title: "Experiência", description: "Experiência profissional de Eduardo Ferreira em suporte técnico e infraestrutura de TI." };
+export default function ExperiencePage() { return <div className="page wrap"><SectionHeading eyebrow="EXPERIÊNCIA" title="Trabalho em contexto." intro="Atuação em suporte, operações e infraestrutura, com foco em ambientes corporativos e soluções práticas para o dia a dia." /><div className="experience-preview experience-page">{experience.map((item) => <article className="experience-line" key={item.company}><span className="period">{item.period}</span><span className="timeline-dot" aria-hidden="true" /><div><h2>{item.role}</h2><p className="company">{item.company} <span>· {item.location}</span></p><p className="body-copy">{item.description}</p><div className="inline-tags">{item.tags.map((tag) => <span key={tag}>{tag}</span>)}</div></div></article>)}</div></div>; }

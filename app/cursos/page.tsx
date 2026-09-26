@@ -1,0 +1,6 @@
+import type { Metadata } from "next";
+import { ArrowUpRight } from "lucide-react";
+import { SectionHeading } from "@/components/section-heading";
+import { courses } from "@/lib/content";
+export const metadata: Metadata = { title: "Cursos e certificações", description: "Cursos e certificações em redes, Linux e segurança da informação." };
+export default function CoursesPage() { return <div className="page wrap"><SectionHeading eyebrow="FORMAÇÃO COMPLEMENTAR" title="Cursos e certificações." intro="Aprendizado contínuo em redes, sistemas e segurança. A lista reflete os cursos atualmente publicados no portfólio." /><div className="editorial-list">{courses.map((course) => <article className="editorial-row" key={course.title}><span className="editorial-source">{course.institution}</span><div><h2>{course.title}</h2><p className="muted">{course.description}</p></div><span className="editorial-period">{course.period}</span></article>)}</div><section className="subsection"><p className="eyebrow">FORMAÇÃO</p><h2>Engenharia da Computação</h2><p className="body-copy">Universidade Ateneu · em curso, 7º semestre. Fortaleza, Ceará.</p><a className="text-link" href="https://www.uniateneu.edu.br/" target="_blank" rel="noreferrer">Universidade Ateneu <ArrowUpRight size={16} /></a></section></div>; }
