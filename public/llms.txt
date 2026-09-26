@@ -8,6 +8,11 @@
 - [Sobre](https://eduardoferreira.space/sobre): trajetória, formação e tecnologias.
 - [Experiência](https://eduardoferreira.space/experiencia): histórico profissional.
 - [Projetos](https://eduardoferreira.space/projetos): projetos técnicos e repositórios públicos.
+  - [Padronização de máquinas](https://eduardoferreira.space/projetos/padronizacao-de-maquinas)
+  - [Preventiva corporativa](https://eduardoferreira.space/projetos/preventiva-corporativa)
+  - [Failover e load balance MikroTik](https://eduardoferreira.space/projetos/failover-mikrotik)
+  - [Pesquisa UniAteneu](https://eduardoferreira.space/projetos/dashboard-pesquisa-uniateneu)
+  - [Homelab e virtualização](https://eduardoferreira.space/projetos/homelab-esxi)
 - [Cursos e certificações](https://eduardoferreira.space/cursos): formação complementar.
 - [Contato](https://eduardoferreira.space/contato): canais de contato.
 
