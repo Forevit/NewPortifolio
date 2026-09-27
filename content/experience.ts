@@ -11,22 +11,22 @@ export type Experience = {
 export const experience: Experience[] = [
   {
     slug: "paerro-tecnologia",
-    period: "Nov 2024 — atual",
+    period: "nov/2024 — atual",
     role: "Técnico de Suporte Júnior",
     company: "Paerro Tecnologia",
     location: "Fortaleza, CE",
     description:
-      "Suporte técnico presencial e remoto em ambientes de clientes corporativos. Padronização de máquinas com PowerShell, administração de redes MikroTik, configuração de VPN WireGuard, monitoramento com Zabbix, controle de acesso HikCentral e automação de rotinas de manutenção e acesso remoto.",
-    tags: ["Windows", "PowerShell", "MikroTik", "WireGuard", "Zabbix", "HikCentral"],
+      "Atendimento técnico presencial e remoto, suporte a usuários e manutenção de ambientes Windows. Atuação em infraestrutura de TI, redes e Wi-Fi, configuração e suporte a equipamentos MikroTik, VPN WireGuard, telefonia IP e soluções PBX com equipamentos Grandstream, monitoramento com Zabbix, CFTV e sistemas de segurança HikCentral. Também atuo com infraestrutura física, manutenção e organização de equipamentos e ambientes de TI, além do desenvolvimento de scripts PowerShell para automatização de rotinas de suporte e manutenção.",
+    tags: ["Windows", "PowerShell", "MikroTik", "WireGuard", "Zabbix", "HikCentral", "Wi-Fi", "Telefonia IP", "Grandstream", "CFTV"],
   },
   {
     slug: "eletra-energy-solutions",
-    period: "Jun 2023 — set 2024",
+    period: "jun/2023 — set/2024",
     role: "Aprendiz de TI",
     company: "Eletra Energy Solutions",
     location: "Fortaleza, CE",
     description:
-      "Suporte técnico interno e helpdesk, manutenção de hardware e software, atendimento de chamados e apoio à infraestrutura de TI. Primeiro contato com ambientes de rede corporativa, Active Directory e gestão de ativos.",
+      "Atuação no suporte de TI em ambiente industrial, realizando atendimento a usuários, manutenção de hardware e software, acompanhamento de chamados e apoio à infraestrutura. Participação na resolução de problemas de estações de trabalho e sistemas utilizados na operação, incluindo diagnóstico e correção de problemas de comunicação entre equipamentos e servidores.",
     tags: ["Helpdesk", "Windows", "Active Directory", "Hardware"],
   },
 ];
