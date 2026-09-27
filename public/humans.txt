@@ -1,0 +1,10 @@
+/* TEAM */
+Desenvolvimento: Guilherme Martins Bezerra
+Função: Desenvolvedor Fullstack
+Local: Brasil
+
+/* SITE */
+Portfólio de: Eduardo Ferreira (Carlos Eduardo Rodrigues Ferreira)
+Idioma: Português (Brasil)
+Stack: Next.js, React, TypeScript, Tailwind CSS, Motion
+Hospedagem: Vercel

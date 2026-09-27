@@ -1,6 +1,28 @@
-import type { Metadata } from "next";
-import { ArrowUpRight, Github, Linkedin, Mail, MapPin } from "lucide-react";
-import { SectionHeading } from "@/components/section-heading";
-import { profile } from "@/lib/content";
-export const metadata: Metadata = { title: "Contato", description: "Entre em contato com Eduardo Ferreira." };
-export default function ContactPage() { return <div className="page wrap"><SectionHeading eyebrow="CONTATO" title="Vamos conversar?" intro="Se você quer trocar uma ideia sobre suporte, infraestrutura, redes ou automação, pode falar comigo por aqui." /><div className="contact-list"><a href={`mailto:${profile.email}`}><Mail /><span><small>E-mail</small><strong>{profile.email}</strong></span><ArrowUpRight /></a><a href={profile.linkedin} target="_blank" rel="noreferrer"><Linkedin /><span><small>LinkedIn</small><strong>Eduardo Ferreira</strong></span><ArrowUpRight /></a><a href={profile.github} target="_blank" rel="noreferrer"><Github /><span><small>GitHub</small><strong>github.com/Forevit</strong></span><ArrowUpRight /></a><div><MapPin /><span><small>Localização</small><strong>{profile.city}</strong></span></div></div></div>; }
+import { MapPin } from "lucide-react";
+import { ContactLinks } from "@/components/contact/contact-links";
+import { PageHeader } from "@/components/ui/section";
+import { profile } from "@/content/profile";
+import { pageMetadata } from "@/lib/site";
+
+export const metadata = pageMetadata({
+  title: "Contato",
+  description: "Entre em contato com Eduardo Ferreira por e-mail, LinkedIn ou GitHub.",
+  path: "/contato",
+});
+
+export default function ContactPage() {
+  return (
+    <div className="wrap pt-16 pb-24 md:pt-24 md:pb-32">
+      <PageHeader
+        eyebrow="Contato"
+        title="Vamos conversar?"
+        intro="Se você quer trocar uma ideia sobre suporte, infraestrutura, redes ou automação, pode falar comigo por aqui."
+      />
+      <ContactLinks />
+      <p className="mt-8 inline-flex items-center gap-3 text-base text-muted">
+        <MapPin size={18} aria-hidden="true" className="text-accent-text" />
+        {profile.city}
+      </p>
+    </div>
+  );
+}

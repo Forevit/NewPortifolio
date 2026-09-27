@@ -1,17 +1,97 @@
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowDown, ArrowRight, ArrowUpRight, Github, Linkedin } from "lucide-react";
-import { profile, experience, projects, skillGroups, courses } from "@/lib/content";
-import { ProjectList } from "@/components/project-list";
-import { GithubProjects } from "@/components/github-projects";
+import { ContactLinks } from "@/components/contact/contact-links";
+import { CourseList } from "@/components/courses/course-list";
+import { Timeline } from "@/components/experience/timeline";
+import { GithubActivity } from "@/components/github/github-activity";
+import { Hero } from "@/components/hero/hero";
+import { ProjectList } from "@/components/projects/project-list";
+import { TechGroups } from "@/components/technologies/tech-groups";
+import { Reveal } from "@/components/ui/reveal";
+import { Section, TextLink } from "@/components/ui/section";
+import { courses } from "@/content/courses";
+import { experience } from "@/content/experience";
+import { profile } from "@/content/profile";
+import { projects } from "@/content/projects";
+import { pageMetadata, site } from "@/lib/site";
 
-export default function HomePage() { return <>
-  <section className="hero wrap"><div className="hero-copy"><p className="eyebrow hero-kicker">TÉCNICO DE TI <i>·</i> FORTALEZA, CE</p><h1>INFRAESTRUTURA,<br /><span>REDES E</span><br />TECNOLOGIA.</h1><p className="hero-intro">{profile.homeIntro}</p><div className="hero-actions"><Link className="button button-primary" href="/projetos">Ver projetos <ArrowRight size={17} /></Link><a className="button button-quiet" href={profile.github} target="_blank" rel="noreferrer"><Github size={17} /> GitHub <ArrowUpRight size={15} /></a></div><a className="scroll-cue" href="#sobre"><ArrowDown size={15} /> Conheça meu trabalho</a></div><div className="hero-portrait"><div className="portrait-grid" aria-hidden="true" /><Image src="/images/eduardo.jpg" alt="Eduardo Ferreira" fill priority sizes="(max-width: 760px) 82vw, 38vw" className="portrait-image" /><span className="portrait-caption">SUPORTE · INFRAESTRUTURA · AUTOMAÇÃO</span></div><div className="hero-index" aria-hidden="true">EF<span> /</span> 2026</div></section>
-  <section className="section wrap" id="sobre"><div className="section-top"><p className="eyebrow">PERFIL</p><h2>Tecnologia que mantém<br />o trabalho em movimento.</h2></div><div className="intro-column"><p className="body-large">Técnico de suporte em TI, com experiência em ambientes corporativos, redes e monitoramento. Minha atuação combina atendimento próximo, cuidado com a infraestrutura e automação de tarefas recorrentes.</p><Link className="text-link" href="/sobre">Mais sobre minha trajetória <ArrowUpRight size={16} /></Link></div></section>
-  <section className="section wrap"><div className="section-bar"><div><p className="eyebrow">TRABALHO EM CONTEXTO</p><h2>Experiência</h2></div><Link className="text-link" href="/experiencia">Ver trajetória <ArrowUpRight size={16} /></Link></div><div className="experience-preview">{experience.map((item) => <article className="experience-line" key={item.company}><span className="period">{item.period}</span><span className="timeline-dot" aria-hidden="true" /><div><h3>{item.role}</h3><p className="company">{item.company} <span>· {item.location}</span></p><p className="muted">{item.description}</p></div></article>)}</div></section>
-  <section className="section wrap"><div className="section-bar"><div><p className="eyebrow">NA PRÁTICA</p><h2>Projetos selecionados</h2></div><Link className="text-link" href="/projetos">Todos os projetos <ArrowUpRight size={16} /></Link></div><ProjectList limit={3} /></section>
-  <section className="section wrap"><div className="section-bar"><div><p className="eyebrow">ATIVIDADE TÉCNICA</p><h2>GitHub</h2></div><span className="quiet-label"><Github size={15} /> FOREVIT</span></div><GithubProjects limit={3} /></section>
-  <section className="section wrap technology-section"><div className="section-bar"><div><p className="eyebrow">FERRAMENTAS NO DIA A DIA</p><h2>Tecnologias</h2></div><Link className="text-link" href="/sobre#tecnologias">Ver contexto <ArrowUpRight size={16} /></Link></div><div className="skill-overview">{skillGroups.slice(0, 4).map((group) => <div className="skill-line" key={group.title}><h3>{group.title}</h3><p>{group.items.slice(0, 7).join(" · ")}</p></div>)}</div></section>
-  <section className="section wrap compact-section"><div className="section-bar"><div><p className="eyebrow">APRENDIZADO CONTÍNUO</p><h2>Cursos e certificações</h2></div><Link className="text-link" href="/cursos">Ver cursos <ArrowUpRight size={16} /></Link></div><div className="course-preview">{courses.slice(0, 3).map((course) => <div className="course-mini" key={course.title}><span>{course.institution}</span><h3>{course.title}</h3></div>)}</div></section>
-  <section className="contact-cta wrap"><div><p className="eyebrow">CONTATO</p><h2>Vamos conversar<br />sobre tecnologia?</h2></div><Link className="button button-primary" href="/contato">Entre em contato <ArrowRight size={17} /></Link><div className="cta-socials"><a href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin /></a><a href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub"><Github /></a></div></section>
-  </>; }
+export const metadata = pageMetadata({ description: site.description, path: "/" });
+
+// Ordem das seções definida no §8 do levantamento.
+export default function HomePage() {
+  return (
+    <>
+      <Hero />
+
+      <section id="sobre" aria-labelledby="sobre-titulo" className="wrap pt-24 md:pt-32">
+        <Reveal className="grid gap-8 border-t border-line pt-10 md:grid-cols-[1fr_1.2fr] md:gap-16 md:pt-14">
+          <div>
+            <p className="eyebrow mb-4">Sobre</p>
+            <h2 id="sobre-titulo" className="text-3xl font-medium tracking-tight md:text-5xl">
+              Tecnologia que mantém o trabalho em movimento.
+            </h2>
+          </div>
+          <div>
+            <p className="text-lg leading-relaxed text-muted md:text-xl">{profile.homeAbout}</p>
+            <div className="mt-6">
+              <TextLink href="/sobre">Mais sobre minha trajetória</TextLink>
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
+      <Section
+        id="projetos"
+        eyebrow="Na prática"
+        title="Projetos em destaque"
+        link={{ href: "/projetos", label: "Todos os projetos" }}
+      >
+        <ProjectList projects={projects.filter((project) => project.featured)} />
+      </Section>
+
+      <Section
+        id="experiencia"
+        eyebrow="Trabalho em contexto"
+        title="Experiência"
+        link={{ href: "/experiencia", label: "Ver trajetória" }}
+      >
+        <Timeline items={experience} compact />
+      </Section>
+
+      <Section
+        id="tecnologias"
+        eyebrow="Ferramentas no dia a dia"
+        title="Tecnologias"
+        link={{ href: "/sobre#tecnologias", label: "Onde cada uma foi usada" }}
+      >
+        <TechGroups />
+      </Section>
+
+      <Section id="github" eyebrow="Atividade técnica" title="GitHub">
+        <GithubActivity limit={3} />
+      </Section>
+
+      <Section
+        id="cursos"
+        eyebrow="Aprendizado contínuo"
+        title="Cursos e certificações"
+        link={{ href: "/cursos", label: "Ver todos" }}
+      >
+        <CourseList courses={courses.filter((course) => course.featured)} />
+      </Section>
+
+      <section id="contato" aria-labelledby="contato-titulo" className="wrap py-24 md:py-32">
+        <Reveal className="mb-10 grid gap-6 md:grid-cols-[1fr_1fr] md:items-end md:gap-16">
+          <div>
+            <p className="eyebrow mb-4">Contato</p>
+            <h2 id="contato-titulo" className="text-4xl font-semibold tracking-[-0.04em] md:text-6xl">
+              Vamos conversar?
+            </h2>
+          </div>
+          <p className="max-w-md text-lg leading-relaxed text-muted">
+            Se você quer trocar uma ideia sobre suporte, infraestrutura, redes ou automação, pode falar comigo por aqui.
+          </p>
+        </Reveal>
+        <ContactLinks />
+      </section>
+    </>
+  );
+}
