@@ -9,7 +9,7 @@ import { pageMetadata } from "@/lib/site";
 export const metadata = pageMetadata({
   title: "Projetos",
   description:
-    "Projetos práticos de Eduardo Ferreira em infraestrutura, redes e automação: padronização de estações, manutenção preventiva, failover MikroTik e mais.",
+    "Projetos de Eduardo Ferreira em suporte e infraestrutura de TI, simulados OAB/FGV, redes e virtualização.",
   path: "/projetos",
 });
 
