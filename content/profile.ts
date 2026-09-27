@@ -10,11 +10,11 @@ export const profile = {
   photo: "/images/eduardo.jpg",
   /** Foto com o fundo removido (rembg), usada no Hero. */
   photoCutout: "/images/eduardo-recorte.png",
-  summary: "Técnico de TI com atuação em suporte, infraestrutura, redes, virtualização e automação.",
+  summary: "Técnico de TI com atuação em suporte, infraestrutura, redes e virtualização.",
   about:
     "Técnico de Suporte em TI com experiência em ambientes corporativos Windows, infraestrutura de redes e monitoramento de sistemas. Atualmente cursando o 7º semestre de Engenharia da Computação na Universidade Ateneu. Focado em evoluir para funções de Sysadmin, Infraestrutura e Automação.",
   homeIntro:
-    "Atuo em suporte e infraestrutura de TI, conectando a operação do dia a dia com redes, sistemas, monitoramento e automação. Fora do trabalho, mantenho um laboratório para testar virtualização, firewalls e redes.",
+    "Atuo em suporte e infraestrutura de TI, conectando a operação do dia a dia com redes, sistemas e monitoramento. Fora do trabalho, mantenho um laboratório para testar virtualização, firewalls e redes.",
   homeAbout:
     "Técnico de suporte em TI, com experiência em ambientes corporativos, redes e monitoramento. Minha atuação combina atendimento próximo, cuidado com a infraestrutura e automação de tarefas recorrentes.",
   focus:
