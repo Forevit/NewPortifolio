@@ -1,11 +1,4 @@
-/**
- * Projetos do portfólio.
- *
- * Regra de conteúdo: apenas fatos reais — texto já publicado no portfólio ou
- * documentado nos READMEs públicos do GitHub (github.com/Forevit).
- * Campos opcionais sem conteúdo não são renderizados. Itens marcados com
- * TODO(cliente) dependem de informação que só o Eduardo pode fornecer.
- */
+
 
 export type ProjectImage = {
   src: string;
@@ -40,94 +33,113 @@ const repo = "https://github.com/Forevit/PaerroTech";
 
 export const projects: Project[] = [
   {
-    slug: "padronizacao-de-maquinas",
-    title: "Padronização de máquinas",
-    type: "Experiência profissional · Paerro Tecnologia",
-    stack: ["PowerShell", "Windows", "GLPI", "Winget", "Active Directory"],
+    slug: "paerrotech",
+    title: "PaerroTech — Suporte e infraestrutura de TI",
+    type: "Experiência profissional · Infraestrutura",
+    stack: ["PowerShell", "Windows", "Winget", "GLPI", "Active Directory", "MikroTik", "RouterOS"],
     summary:
-      "Automação de implantação e padronização de estações corporativas com scripts PowerShell e controle de etapas por registro. Desenvolvido no contexto profissional; detalhes internos do ambiente não são publicados.",
+      "Conjunto de scripts e soluções para padronização e manutenção de computadores corporativos, suporte técnico e infraestrutura de redes, desenvolvido no contexto profissional da Paerro Tecnologia.",
     tier: "principal",
     featured: true,
     cover: {
       src: "/projects/padronizacao-fluxograma.svg",
-      alt: "Fluxograma das etapas do script de padronização de estações Windows",
+      alt: "Fluxograma de um dos módulos de padronização de estações Windows do PaerroTech",
       width: 680,
       height: 1180,
       kind: "diagram",
     },
     about:
-      "Script de padronização automática de máquinas Windows, utilizado para agilizar a entrega de equipamentos e garantir conformidade com o ambiente da empresa.",
+      "Reúne ferramentas e scripts criados durante a atuação na Paerro Tecnologia. O projeto abrange preparação e manutenção de estações Windows, além de scripts MikroTik para cenários de conectividade dos clientes.",
     problem:
-      "A preparação manual de cada estação é demorada e sujeita a erros. O objetivo foi reduzir o tempo de setup e garantir que todo equipamento entregue siga o mesmo padrão.",
+      "A preparação e a manutenção de computadores envolvem etapas repetitivas, como configuração do Windows, instalação de programas e drivers, atualizações e registro dos procedimentos. Organizar essas rotinas ajuda a tornar o atendimento mais consistente.",
     solution: [
-      "Definição de hostname e ingresso automático no domínio",
-      "Criação e configuração do administrador local",
-      "Instalação de softwares essenciais via Winget (Chrome, Firefox, Java, AnyDesk, Adobe Reader, WinRAR)",
-      "Instalação do GLPI Agent e do Microsoft Office 2021",
-      "Instalação de drivers por fabricante (Dell e Lenovo)",
-      "Windows Update executado em segundo plano",
+      "Scripts PowerShell para padronização de estações Windows, instalação de softwares via Winget e configuração do GLPI Agent",
+      "Rotinas de atualização do Windows, instalação de drivers e manutenção preventiva",
+      "Scripts MikroTik para failover entre links, load balance e configuração de rotas",
     ],
     implementation: [
-      "Execução por etapas com retomada automática após reinicialização",
-      "Sistema de logs detalhado em C:\\Users\\Public\\Documents\\Logs\\Padronizacao",
-      "Tratamento de erro com try/catch em cada etapa",
-      "Distribuído também como executável (Paerro-Setup.exe) para uso pela equipe",
+      "Etapas de preparação podem continuar após reinicializações; o processo registra atividades em logs",
+      "Tratamento de erros nas rotinas PowerShell e distribuição do Paerro-Setup.exe para uso da equipe",
+      "Scripts organizados por módulos no repositório público PaerroTech",
     ],
-    links: [{ label: "Ver no GitHub", href: `${repo}/tree/main/PadronizacaoMaquinas` }],
-    related: ["preventiva-corporativa", "failover-mikrotik"],
+    links: [{ label: "Repositório PaerroTech", href: repo }],
+    related: ["simulados-oab-fgv", "homelab-esxi"],
   },
   {
-    slug: "preventiva-corporativa",
-    title: "Preventiva corporativa",
-    type: "Automação · Paerro Tecnologia",
-    stack: ["PowerShell", "Windows", "Winget", "GLPI"],
+    slug: "simulados-oab-fgv",
+    title: "Gerador de questões e simulados OAB/FGV",
+    type: "Projeto pessoal · Educação · Desenvolvimento web",
+    stack: ["HTML", "CSS", "JavaScript", "Supabase", "PostgreSQL", "n8n", "OpenAI API"],
     summary:
-      "Rotina de manutenção preventiva com interface TUI, modo dry-run, execução paralela com runspaces e tratamento seguro de credenciais.",
+      "Sistema de estudos jurídicos que gera questões no estilo OAB/FGV com inteligência artificial e as disponibiliza em uma plataforma web de simulados.",
     tier: "principal",
     featured: true,
     about:
-      "Scripts responsáveis por manter as máquinas corporativas atualizadas, limpas e operando com bom desempenho, executados periodicamente pela equipe de suporte.",
+      "O projeto reúne um workflow de geração de questões e um site de simulados. As questões estruturadas são armazenadas no Supabase e apresentadas aos estudantes na plataforma.",
     problem:
-      "Reduzir falhas e incidentes, melhorar o desempenho das máquinas, manter atualizações de segurança em dia e diminuir o volume de chamados.",
+      "A preparação para a OAB exige prática com questões variadas, organizadas por disciplina, com alternativas, respostas e explicações.",
     solution: [
-      "Windows Update automático",
-      "Atualização de drivers e de softwares via Winget",
-      "Limpeza de disco e de arquivos temporários",
-      "Remoção de perfis de usuário antigos",
-      "Verificação de softwares essenciais e atualização do Java",
-      "Ajustes básicos de sistema",
+      "Geração de questões com enunciado, quatro alternativas, resposta correta, explicações, disciplina e dificuldade",
+      "Site para escolher disciplinas, responder questões, conferir explicações e acompanhar a pontuação",
+      "Conteúdo organizado para disciplinas como Direito Civil, Direito Penal, Processo Civil e Direito do Trabalho",
     ],
     implementation: [
-      "Etapas que podem ser ignoradas individualmente por parâmetro",
-      "Logs com status, ações realizadas e erros em C:\\Users\\Public\\Documents\\Logs\\Preventiva",
-      "Scripts não armazenam credenciais em texto plano",
-      "Recomendação de execução fora do horário crítico, como administrador",
+      "Workflow no n8n organiza a geração por IA, valida os dados estruturados em JSON e insere as questões no Supabase",
+      "O fluxo inclui controles para evitar duplicidades e administrar o uso da API",
+      "A aplicação web consulta as questões armazenadas para montar os simulados",
     ],
-    links: [{ label: "Ver no GitHub", href: `${repo}/tree/main/Preventivas` }],
-    related: ["padronizacao-de-maquinas"],
+    links: [{ label: "Abrir site de simulados", href: "https://luiza.eduardoferreira.space" }],
+    related: ["paerrotech", "dividas-luiza"],
   },
   {
-    slug: "failover-mikrotik",
-    title: "Failover e load balance MikroTik",
-    type: "Redes · Paerro Tecnologia",
-    stack: ["MikroTik", "RouterOS v6/v7", "Redes WAN"],
+    slug: "homelab-esxi",
+    title: "HomeLab — Laboratório de infraestrutura",
+    type: "Projeto pessoal · Infraestrutura e redes",
+    stack: ["VMware ESXi", "Proxmox", "MikroTik", "OPNsense", "Docker", "Windows Server", "Linux"],
     summary:
-      "Scripts para padronizar configurações críticas de roteadores MikroTik: rotas estáticas via DHCP, failover entre links de internet e balanceamento de carga.",
-    tier: "menor",
+      "Laboratório pessoal para estudar e testar infraestrutura, redes, virtualização, servidores e segurança em um ambiente controlado.",
+    tier: "principal",
     featured: true,
     about:
-      "Módulo do repositório PaerroTech com scripts para cenários de infraestrutura WAN, compatíveis com RouterOS v6 e v7.",
+      "O HomeLab permite experimentar tecnologias e simular cenários de infraestrutura sem depender de ambientes de produção. Os estudos incluem virtualização, redes, firewalls e serviços Windows e Linux.",
+    problem:
+      "Praticar configurações e investigar falhas em um ambiente controlado permite aprender com testes sem interferir em serviços de produção.",
     solution: [
-      "Criação automática de rotas default a partir do gateway DHCP",
-      "Failover: monitora múltiplos links e troca automaticamente em caso de falha",
-      "Failover + load balance: distribui o tráfego entre links ativos com fallback automático",
+      "Estudos de virtualização com VMware ESXi e Proxmox, incluindo máquinas Windows e Linux",
+      "Testes de rede com equipamentos MikroTik, RouterOS, PPPoE, DHCP, VPN, failover e load balance",
+      "Experimentação com OPNsense, Active Directory, File Server e serviços em Docker",
+      "Práticas de backup, monitoramento, recuperação de máquinas virtuais e troubleshooting",
     ],
     implementation: [
-      "Aplicação via terminal (Winbox, WebFig ou SSH)",
-      "Checklist antes da execução: versão do RouterOS, interfaces WAN/LAN e backup da configuração atual",
+      "Ambiente físico com processador Intel Core i5-10400, 64 GB de RAM e aproximadamente 3 TB de armazenamento",
+      "Laboratório de rede com equipamentos MikroTik RB4011, RB750Gr3 e hEX, além de nobreak",
+      "Serviços e integrações testados incluem n8n, Evolution API, PostgreSQL, Redis e monitoramento de conectividade",
     ],
-    links: [{ label: "Ver no GitHub", href: `${repo}/tree/main/ScriptsMikrotik` }],
-    related: ["homelab-esxi"],
+    related: ["paerrotech", "dividas-luiza"],
+  },
+  {
+    slug: "dividas-luiza",
+    title: "Central de Dívidas — Luiza",
+    type: "Projeto pessoal · Em desenvolvimento",
+    stack: ["n8n", "Evolution API", "WhatsApp", "Supabase", "PostgreSQL", "Redis", "OpenAI API"],
+    summary:
+      "Sistema em desenvolvimento para organizar clientes, dívidas, parcelas e pagamentos e integrar o atendimento pelo WhatsApp.",
+    tier: "menor",
+    about:
+      "A Central de Dívidas combina workflows no n8n, integração com WhatsApp e uma base Supabase para apoiar consultas e operações administrativas. Os recursos descritos estão em desenvolvimento ou planejados.",
+    problem:
+      "O sistema busca centralizar informações de clientes, dívidas, parcelas, pagamentos e histórico de atendimento que poderiam ficar dispersas entre mensagens e planilhas.",
+    solution: [
+      "Estrutura para cadastro e consulta de clientes, dívidas, parcelas e pagamentos",
+      "Atendimento pelo WhatsApp para consultas e envio de informações, incluindo mensagens de voz",
+      "Agentes separados para consultas públicas e operações administrativas",
+    ],
+    implementation: [
+      "Integração planejada com Evolution API, n8n, Supabase, Redis e serviços de IA",
+      "Controles de acesso e separação entre dados e operações públicas e administrativas",
+      "Dados reais de clientes, credenciais e URLs privadas não fazem parte da demonstração pública",
+    ],
+    related: ["simulados-oab-fgv", "homelab-esxi"],
   },
   {
     slug: "dashboard-pesquisa-uniateneu",
@@ -147,25 +159,12 @@ export const projects: Project[] = [
       "Gráficos interativos, tabelas dinâmicas e heatmaps",
     ],
     implementation: [
-      "Leitura automática de arquivos CSV com tratamento e padronização dos dados",
+      "Leitura de arquivos CSV com tratamento e padronização dos dados",
       "Processamento com Python e Pandas; interface em Streamlit",
-      "Visualizações com Plotly; planilhas com OpenPyXL",
+      "Visualizações com Plotly",
     ],
     // TODO(cliente): adicionar screenshots do dashboard (sem dados identificáveis de alunos).
     links: [{ label: "Ver no GitHub", href: "https://github.com/Forevit/dashboard-pesquisa-uniateneu" }],
-  },
-  {
-    slug: "homelab-esxi",
-    title: "Homelab e virtualização",
-    type: "Laboratório",
-    stack: ["VMware ESXi", "Redes", "Virtualização", "Firewall"],
-    summary:
-      "Laboratório pessoal para praticar virtualização, redes internas e serviços de infraestrutura. O ambiente é um espaço contínuo de aprendizado e experimentação.",
-    tier: "menor",
-    about:
-      "Ambiente para explorar virtualização com ESXi, redes internas, firewalls e automação com PowerShell e Python — testando em ambiente controlado o que será aplicado com segurança em produção.",
-    // TODO(cliente): topologia/diagrama do homelab e lista de serviços em execução.
-    related: ["failover-mikrotik"],
   },
 ];
 
