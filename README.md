@@ -5,7 +5,9 @@ Portfólio profissional de Eduardo Ferreira, desenvolvido para apresentar experi
 O projeto é focado em **suporte técnico, infraestrutura, redes, virtualização, segurança e automação**.
 
 🌐 **Site:** https://eduardoferreira.space
+
 🐙 **GitHub:** https://github.com/Forevit
+
 💼 **LinkedIn:** https://www.linkedin.com/in/carloseduardorodriguesferreira/
 
 ---
@@ -105,7 +107,7 @@ Não existe banco de dados ou CMS para o conteúdo principal do site.
 ### Instalação
 
 ```bash
-pnpm install
+ npm install
 ```
 
 ### Variáveis de ambiente
@@ -123,7 +125,7 @@ NEXT_PUBLIC_GA_ID=G-B4YV9LLZKP
 ### Ambiente de desenvolvimento
 
 ```bash
-pnpm dev
+ npm dev
 ```
 
 O projeto ficará disponível em:
@@ -135,19 +137,19 @@ http://localhost:3000
 ### Lint
 
 ```bash
-pnpm lint
+ npm lint
 ```
 
 ### Build
 
 ```bash
-pnpm build
+ npm build
 ```
 
 ### Produção
 
 ```bash
-pnpm start
+ npm start
 ```
 
 ---
@@ -384,7 +386,7 @@ Este é um projeto pessoal e não aceita contribuições externas no momento. Su
 
 ---
 
-## 👤 Autor
+## 👤 Autores
 
 **Eduardo Ferreira**
 
@@ -398,6 +400,18 @@ Técnico de TI com atuação em:
 - Automação
 
 📍 Fortaleza, Ceará — Brasil
+
+**Guilherme Martins**
+
+- Desenvolvimento Full Stack
+- Desenvolvimento Web
+- UX/UI Design
+- Inteligência Artificial
+- Automação e integração de sistemas
+- Desenvolvimento e integração de soluções com IA
+
+📍 Fortaleza, Ceará — Brasil
+
 
 ---
 
