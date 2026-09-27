@@ -1,4 +1,3 @@
-
 export type ProjectImage = {
   src: string;
   alt: string;
@@ -206,7 +205,10 @@ export function getRelatedProjects(project: Project, limit = 2) {
     .filter((item): item is Project => Boolean(item));
   const byStack = projects
     .filter((item) => item.slug !== project.slug && !explicit.includes(item))
-    .map((item) => ({ item, shared: item.stack.filter((tech) => project.stack.includes(tech)).length }))
+    .map((item) => ({
+      item,
+      shared: item.stack.filter((tech) => project.stack.includes(tech)).length,
+    }))
     .filter(({ shared }) => shared > 0)
     .sort((a, b) => b.shared - a.shared)
     .map(({ item }) => item);
