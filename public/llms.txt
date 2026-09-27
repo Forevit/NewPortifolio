@@ -11,7 +11,7 @@
   - [PaerroTech — Suporte e infraestrutura de TI](https://eduardoferreira.space/projetos/paerrotech)
   - [Gerador de questões e simulados OAB/FGV](https://eduardoferreira.space/projetos/simulados-oab-fgv)
   - [HomeLab — Laboratório de infraestrutura](https://eduardoferreira.space/projetos/homelab-esxi)
-  - [Central de Dívidas — Luiza](https://eduardoferreira.space/projetos/dividas-luiza)
+  - [Central de Dívidas](https://eduardoferreira.space/projetos/central-dividas)
   - [Pesquisa UniAteneu](https://eduardoferreira.space/projetos/dashboard-pesquisa-uniateneu)
 - [Cursos e certificações](https://eduardoferreira.space/cursos): formação complementar.
 - [Contato](https://eduardoferreira.space/contato): canais de contato.
